@@ -38,7 +38,11 @@ jobs:
             - name: Get changed files
               id: changed-files
               uses: tj-actions/changed-files@v44
-            
+            - name: Echo changed files
+              id: echo_changed_files
+              run: |
+                echo "Changed files:"
+                echo "${{ steps.changed-files.outputs.all_changed_files }}"
             - name: Run dbt-opiner linter
               id: dbt-opiner-lint
               env:
@@ -46,6 +50,7 @@ jobs:
               run: |
                 set +e
                 CONCATENATED_FILES=""
+                echo ${ALL_CHANGED_FILES}
                 if [ -z "${ALL_CHANGED_FILES}" ]; then
                   ALL_CHANGED_FILES="."
                 fi
