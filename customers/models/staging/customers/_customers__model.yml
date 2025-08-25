@@ -5,7 +5,10 @@ models:
     description: Staging table for customers
     columns:
       - name: customer_id
-        description: Unique identifier for the customer
+        data_tests:
+          - unique
+          - not_null
+      - name: product_id
         data_tests:
           - unique
           - not_null
