@@ -10,4 +10,4 @@ models:
       - name: status
         data_tests:
           - accepted_values:
-              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+              values: ['placed', 'canceled', 'shipped', 'completed', 'return_pending', 'returned']
