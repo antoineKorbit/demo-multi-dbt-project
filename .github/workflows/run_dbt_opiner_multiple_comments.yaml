@@ -46,6 +46,7 @@ jobs:
               run: |
                 set +e
                 CONCATENATED_FILES=""
+                echo ${ALL_CHANGED_FILES}
                 if [ -z "${ALL_CHANGED_FILES}" ]; then
                   ALL_CHANGED_FILES="."
                 fi
